@@ -4,6 +4,7 @@ const timeLeft = document.querySelector('#time-left')
 let score = document.querySelector('#score')
 
 let result = 0
+let currentTime = timeLeft.textContent
 
 //the function to place the photo anywhere
 
@@ -30,3 +31,20 @@ square.forEach(id => {
 
 
 //function to move the mole around the grid
+function moveMole() {
+    let timerId = null
+    timerId = setInterval(randomSquare, 1000)
+}
+
+//function to reduce the timer
+function countDown() {
+    currentTime--
+    timeLeft.textContent = currentTime
+
+    if(currentTime === 0 ) {
+        clearInterval(timerId)
+        alert('GAME OVER! Your final score is ' + result)
+    }
+}
+
+let timerId = setInterval(countDown, 1000)
