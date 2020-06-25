@@ -36,6 +36,8 @@ function moveMole() {
     timerId = setInterval(randomSquare, 1000)
 }
 
+moveMole()
+
 //function to reduce the timer
 function countDown() {
     currentTime--
